@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org
+http://www.thymeleaf.org ">
+<head>
+    <title>Korisnici</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="korisnici">
+    <tr>
+        <th>Korisnicko ime</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Obrisi</th>
+    </tr>
+    <tr th:each="korisnik : ${korisnici}">
+        <td th:text="${korisnik.id}"></td>
+        <td th:text="${korisnik.KorisnickoIme}"></td>
+        <td th:text="${korisnik.Ime}"></td>
+        <td th:text="${korisnik.Prezime}"></td>
+        <td><a th:href="${'/delete/' + korisnik.id}">Obrisi</a></td>
+    </tr>
+</table>
+</body>
+</html>
